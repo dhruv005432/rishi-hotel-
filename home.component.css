@@ -1,0 +1,25 @@
+.hero-banner {
+  min-height: 80vh;
+  background: linear-gradient(to right, #000000, #bfa046);
+  color: #fff;
+}
+
+.scrolling-title,
+.scrolling-slogan {
+  animation: scroll-text 8s linear infinite;
+}
+
+@keyframes scroll-text {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.cta-section button {
+  font-size: 1.2rem;
+}

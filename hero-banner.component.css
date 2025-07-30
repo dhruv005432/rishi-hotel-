@@ -1,0 +1,63 @@
+.hero-banner {
+  background: linear-gradient(to right, #000000, #bfa046);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.scrolling-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  animation: scroll-title 10s linear infinite;
+}
+
+.scrolling-slogan {
+  font-size: 1.3rem;
+  font-style: italic;
+  animation: scroll-slogan 12s linear infinite;
+}
+
+@keyframes scroll-title {
+  0% { transform: translateX(-10%); opacity: 0; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(10%); opacity: 0; }
+}
+
+@keyframes scroll-slogan {
+  0% { transform: translateX(10%); opacity: 0; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-10%); opacity: 0; }
+}
+
+.hero-banner img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Quick Links Styles */
+.quick-links i {
+  color: #bfa046;
+  transition: transform 0.3s ease;
+}
+
+.quick-links i:hover {
+  transform: scale(1.2);
+}
+
+.quick-links h5 {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.quick-links a {
+  display: inline-block;
+  padding: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.quick-links a:hover {
+  color: #bfa046;
+  transform: scale(1.05);
+}

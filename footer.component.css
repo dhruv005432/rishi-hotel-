@@ -1,0 +1,15 @@
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.social-icons i {
+  font-size: 18px;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: #ffd700;
+}
