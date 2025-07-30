@@ -26,5 +26,12 @@
       "email": "dhruvdhameliya12356@gmail.com",
       "message": "Hello can you help"
     }
+  ],
+  "login": [
+     {
+      "email": "admin@khodal.com",
+      "password": "admin123"
+    }
   ]
+    
 }
