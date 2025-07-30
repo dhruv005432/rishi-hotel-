@@ -1,0 +1,18 @@
+.container h2 {
+  font-weight: bold;
+  color: #343a40;
+}
+
+h4 {
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.fa {
+  margin-right: 5px;
+}

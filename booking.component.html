@@ -1,0 +1,74 @@
+<div class="container mt-4">
+  <form #bookingForm="ngForm" (ngSubmit)="submitBooking(bookingForm)">
+    <div class="row g-3">
+
+      <div class="col-md-4">
+        <label>Name:</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="selectedBooking.name" required />
+      </div>
+
+      <div class="col-md-4">
+        <label>Email:</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="selectedBooking.email" required />
+      </div>
+
+      <div class="col-md-4">
+        <label>Phone:</label>
+        <input type="text" class="form-control" name="phone" [(ngModel)]="selectedBooking.phone" required />
+      </div>
+
+      <div class="col-md-4">
+        <label>Room Type:</label>
+        <select class="form-select" name="roomType" [(ngModel)]="selectedBooking.roomType" required>
+          <option *ngFor="let room of ['Deluxe', 'Suite', 'Standard', 'Luxury', 'Family', 'Single', 'Double', 'Executive', 'Superior', 'Penthouse']" [value]="room">{{ room }}</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label>Check-in Date:</label>
+        <input type="date" class="form-control" name="checkInDate" [(ngModel)]="selectedBooking.checkInDate" required />
+      </div>
+
+      <div class="col-md-4">
+        <label>Check-out Date:</label>
+        <input type="date" class="form-control" name="checkOutDate" [(ngModel)]="selectedBooking.checkOutDate" required />
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-primary me-2" type="submit">
+          {{ selectedBooking.id ? 'Update Booking' : 'Submit Booking' }}
+        </button>
+        <button class="btn btn-warning" type="reset" (click)="selectedBooking = initBooking()">Reset</button>
+      </div>
+    </div>
+  </form>
+
+  <hr />
+
+  <h4>All Bookings</h4>
+  <table class="table table-bordered table-striped mt-3">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Room</th>
+        <th>Check-in</th>
+        <th>Check-out</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings">
+        <td>{{ booking.name }}</td>
+        <td>{{ booking.email }}</td>
+        <td>{{ booking.roomType }}</td>
+        <td>{{ booking.checkInDate }}</td>
+        <td>{{ booking.checkOutDate }}</td>
+        <td>
+          <button class="btn btn-sm btn-info me-1" (click)="editBooking(booking)">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteBooking(booking.id!)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
