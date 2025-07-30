@@ -1,0 +1,30 @@
+{
+  "bookings": [
+    {
+      "id": "6cd2",
+      "name": "Dhruv Jagadishbhai Dhameliya",
+      "email": "dhruvdhameliya357@gmail.com",
+      "phone": "78628 32972",
+      "roomType": "Double",
+      "checkInDate": "2025-07-31",
+      "checkOutDate": "2025-07-05"
+    },
+    {
+      "id": "3fa5",
+      "name": "Dhruv Dhameliya",
+      "email": "dhruvdhameliya12356@gmail.com",
+      "phone": "7862832972",
+      "roomType": "Premium",
+      "checkInDate": "2025-08-01",
+      "checkOutDate": "2025-07-05"
+    }
+  ],
+  "contactMessages": [
+    {
+      "id": "9f2c",
+      "name": "Abc ",
+      "email": "dhruvdhameliya12356@gmail.com",
+      "message": "Hello can you help"
+    }
+  ]
+}
