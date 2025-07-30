@@ -1,0 +1,51 @@
+<div class="container py-4">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let room of rooms">
+      <div class="card h-100 shadow-sm">
+        <img [src]="room.image" class="card-img-top" [alt]="room.name">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ room.name }}</h5>
+          <p class="text-center text-muted">
+            <i class="fa fa-inr"></i> {{ room.price }} / night
+          </p>
+          <p class="text-center">
+            <i class="fa fa-wifi me-2" *ngIf="room.features.includes('Wi-Fi')"></i>
+            <i class="fa fa-snowflake-o me-2" *ngIf="room.features.includes('AC')"></i>
+            <i class="fa fa-tv me-2" *ngIf="room.features.includes('TV')"></i>
+          </p>
+          <div class="d-flex justify-content-around">
+            <button class="btn btn-primary btn-sm" (click)="openDetails(room)">
+              <i class="fa fa-eye me-1"></i> View Details
+            </button>
+            <button class="btn btn-success btn-sm">
+              <i class="fa fa-bed me-1"></i> Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div *ngIf="selectedRoom" class="modal fade show d-block" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content text-center p-4">
+      <h4>{{ selectedRoom.name }}</h4>
+      <p><strong>Price:</strong> ₹{{ selectedRoom.price }}</p>
+      <p>
+        <i class="fa fa-wifi me-2" *ngIf="selectedRoom.features.includes('Wi-Fi')"></i>
+        <i class="fa fa-snowflake-o me-2" *ngIf="selectedRoom.features.includes('AC')"></i>
+        <i class="fa fa-tv me-2" *ngIf="selectedRoom.features.includes('TV')"></i>
+      </p>
+      <div class="d-flex justify-content-center mt-3">
+        <button class="btn btn-success me-2">
+          <i class="fa fa-bed me-1"></i> Book Now
+        </button>
+        <button class="btn btn-dark" (click)="closeDetails()">
+          <i class="fa fa-times me-1"></i> Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
