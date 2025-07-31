@@ -1,0 +1,71 @@
+<div class="container mt-4">
+  <div class="row">
+    <!-- Left Side Form -->
+    <div class="col-md-6 border p-4 rounded bg-light">
+      <h4><i class="fa fa-user-plus me-2"></i>Register</h4>
+      <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+        <div class="mb-2">
+          <label>First Name</label>
+          <input type="text" class="form-control" required name="firstName" ngModel>
+        </div>
+
+        <div class="mb-2">
+          <label>Middle Name</label>
+          <input type="text" class="form-control" name="middleName" ngModel>
+        </div>
+
+        <div class="mb-2">
+          <label>Last Name</label>
+          <input type="text" class="form-control" name="lastName" ngModel>
+        </div>
+
+        <div class="mb-2">
+          <label>Date of Birth</label>
+          <input type="date" class="form-control" name="dob" [(ngModel)]="dob" (change)="calculateAge()" required>
+        </div>
+
+        <div class="mb-2">
+          <label>Age</label>
+          <input type="number" class="form-control" [value]="age" readonly>
+        </div>
+
+        <div class="mb-2">
+          <label>Mobile Number</label>
+          <input type="tel" class="form-control" required name="mobile" ngModel>
+        </div>
+
+        <div class="mb-2">
+          <label>Email</label>
+          <input type="email" class="form-control" required name="email" ngModel>
+        </div>
+
+        <div class="mb-2">
+          <label>Address</label>
+          <textarea class="form-control" name="address" ngModel></textarea>
+        </div>
+
+        <div class="mb-2">
+          <label>City</label>
+          <input type="text" class="form-control" name="city" ngModel>
+        </div>
+
+        <div class="mb-3">
+          <label>State</label>
+          <select class="form-control" name="state" ngModel>
+            <option value="">--Select State--</option>
+            <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary w-100">
+          <i class="fa fa-save me-2"></i>Register
+        </button>
+      </form>
+    </div>
+
+    <!-- Right Side Image -->
+    <div class="col-md-6 text-center">
+      <img src="https://via.placeholder.com/400x400" alt="Register" class="img-fluid rounded shadow">
+    </div>
+  </div>
+</div>
