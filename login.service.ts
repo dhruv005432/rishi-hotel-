@@ -1,17 +1,15 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoginModel } from '../models/auth.model';
+import { Injectable } from '@angular/core';
+import { Login } from '../models/login.model';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class LoginService {
-  private baseUrl = 'http://localhost:3000/login'; // your Swagger/db.json endpoint
+  private baseUrl = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) {}
 
-  login(data: LoginModel): Observable<any> {
-    return this.http.post(this.baseUrl, data);
+  loginUser(email: string, password: string): Observable<Login[]> {
+    return this.http.get<Login[]>(`${this.baseUrl}?email=${email}&password=${password}`);
   }
 }
